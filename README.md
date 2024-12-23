@@ -89,7 +89,7 @@ unsigned char eeprom_read(unsigned char address) {
 5. Read the data byte and send a STOP condition.
 
 ### 4. Main Function
-The main function receives text data via UART, calculates the transmission speed, stores it in EEPROM, and displays the speed on the LCD.
+The main function receives text data via UART, calculates the transmission speed, stores it in EEPROM, and displays the speed on the LCD. I have used character '8' as stop button as device recived it , they start Transmiting .
 
 #### Implementation:
 ```c
