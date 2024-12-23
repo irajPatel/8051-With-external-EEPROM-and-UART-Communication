@@ -41,9 +41,9 @@ This README file provides detailed instructions for connecting an EEPROM (24C02)
 ### 1. UART Initialization
 ```c
 void uart_init() {
-    SCON = 0x50;  // 8-bit UART mode
-    TMOD = 0x20;  // Timer 1, Mode 2
-    TH1 = 0xFD;   // Baud rate 9600
+    SCON = 0x50;  // 8-bit UART mode, REN enabled
+    TMOD = 0x20;  // Timer 1, mode 2 (auto-reload)
+    TH1 = 0xF9;   // Baud rate 2400
     TR1 = 1;      // Start Timer 1
 }
 ```
