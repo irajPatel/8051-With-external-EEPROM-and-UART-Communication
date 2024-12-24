@@ -6,8 +6,8 @@ sbit rw = P1^1;
 sbit en = P1^2;
 
 // Define I2C Pins
-sbit SDA = P1^4; // I²C Data line
-sbit SCK = P1^5; // I²C Clock line
+sbit SDA = P1^4; // IÂ²C Data line
+sbit SCK = P1^5; // IÂ²C Clock line
 
 
 
@@ -53,19 +53,19 @@ void delay(int a) {
     }
 }
 
-void uart_init() {
+/*void uart_init() {
     SCON = 0x50;  
     TMOD = 0x20;  // Timer 1, mode 2
     TH1 = 0xFD;   // Baud rate 9600
     TR1 = 1;      // Start Timer 1
-}
+}*/
 
-/*void uart_init() {
+void uart_init() {
     SCON = 0x50;  // 8-bit UART mode, REN enabled
     TMOD = 0x20;  // Timer 1, mode 2 (auto-reload)
     TH1 = 0xF9;   // Baud rate 2400
     TR1 = 1;      // Start Timer 1
-}*/
+}
 
 void uart_tx(char ch) {
     SBUF = ch;
